@@ -1,0 +1,22 @@
+src/
+└── application/
+    ├── Program.java
+    └── UI.java
+└── boardgame/
+    ├── Board.java
+    ├── BoardException.java
+    ├── Piece.java
+    └── Position.java
+└── chess/
+    ├── ChessException.java
+    ├── ChessMatch.java
+    ├── ChessPiece.java
+    ├── ChessPosition.java
+    ├── Color.java
+    └── pieces/
+        ├── Bishop.java
+        ├── King.java
+        ├── Knight.java
+        ├── Pawn.java
+        ├── Queen.java
+        └── Rook.java
