@@ -53,7 +53,17 @@ public class UI {
         printBoard(chessMatch.getPieces());
         System.out.println();
         System.out.println("Turno: " + chessMatch.getTurn());
-        System.out.println("Aguardando jogador: " + chessMatch.getCurrentPlayer());
+
+        // --- ALTERAÇÃO AQUI: Lógica de Xeque e Xeque-Mate ---
+        if (!chessMatch.isCheckMate()) {
+            System.out.println("Aguardando jogador: " + chessMatch.getCurrentPlayer());
+            if (chessMatch.getCheck()) {
+                System.out.println(ANSI_RED + "ATENÇÃO: VOCÊ ESTÁ EM XEQUE!" + ANSI_RESET);
+            }
+        } else {
+            System.out.println(ANSI_RED + "XEQUE-MATE!" + ANSI_RESET);
+            System.out.println("Vencedor: " + chessMatch.getCurrentPlayer());
+        }
     }
 
     // Desenha o tabuleiro normal na tela
