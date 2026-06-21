@@ -4,7 +4,6 @@ public abstract class Piece {
     protected Position position;
     private Board board;
 
-    // Construtor que recebe o tabuleiro e define a posição inicial da peça como null (fora do tabuleiro)
     public Piece(Board board) {
         this.board = board;
         this.position = null;

@@ -13,7 +13,6 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         ChessMatch chessMatch = new ChessMatch();
 
-        // CORREÇÃO AQUI: Alterado de getCheckMate() para isCheckMate()
         while (!chessMatch.isCheckMate()) {
             try {
 
@@ -33,6 +32,17 @@ public class Program {
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+
+                if (chessMatch.getPromoted() != null) {
+                    System.out.print("Peão promovido! Digite a inicial da peça escolhida (B/N/R/Q): ");
+                    String type = sc.nextLine().toUpperCase();
+
+                    while (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+                        System.out.print("Letra inválida! Digite (B) para Bispo, (N) para Cavalo, (R) para Torre ou (Q) para Rainha: ");
+                        type = sc.nextLine().toUpperCase();
+                    }
+                    chessMatch.replacePromotedPiece(type);
+                }
 
             }
             catch (ChessException | InputMismatchException e) {

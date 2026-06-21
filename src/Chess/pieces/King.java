@@ -10,7 +10,6 @@ public class King extends ChessPiece {
 
     private ChessMatch chessMatch;
 
-    // Construtor atualizado para receber a partida
     public King(Board board, Color color, ChessMatch chessMatch) {
         super(board, color);
         this.chessMatch = chessMatch;
@@ -26,7 +25,6 @@ public class King extends ChessPiece {
         return p == null || p.getColor() != getColor();
     }
 
-    // Método auxiliar para testar se a Torre está apta para o Roque
     private boolean testRookCastling(Position position) {
         ChessPiece p = (ChessPiece) getBoard().piece(position);
         return p != null && p instanceof Rook && p.getColor() == getColor() && p.getMoveCount() == 0;
@@ -38,57 +36,47 @@ public class King extends ChessPiece {
 
         Position p = new Position(0, 0);
 
-        // 1. Acima
         p.setValues(position.getRow() - 1, position.getColumn());
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 2. Abaixo
         p.setValues(position.getRow() + 1, position.getColumn());
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 3. Esquerda
         p.setValues(position.getRow(), position.getColumn() - 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 4. Direita
         p.setValues(position.getRow(), position.getColumn() + 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 5. Noroeste
         p.setValues(position.getRow() - 1, position.getColumn() - 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 6. Nordeste
         p.setValues(position.getRow() - 1, position.getColumn() + 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 7. Sudoeste
         p.setValues(position.getRow() + 1, position.getColumn() - 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // 8. Sudeste
         p.setValues(position.getRow() + 1, position.getColumn() + 1);
         if (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // #Movimento Especial: ROQUE (Castling)
         if (getMoveCount() == 0 && !chessMatch.getCheck()) {
-            // Roque Pequeno (Lado do Rei)
             Position posT1 = new Position(position.getRow(), position.getColumn() + 3);
             if (testRookCastling(posT1)) {
                 Position p1 = new Position(position.getRow(), position.getColumn() + 1);
@@ -97,7 +85,6 @@ public class King extends ChessPiece {
                     mat[position.getRow()][position.getColumn() + 2] = true;
                 }
             }
-            // Roque Grande (Lado da Rainha)
             Position posT2 = new Position(position.getRow(), position.getColumn() - 4);
             if (testRookCastling(posT2)) {
                 Position p1 = new Position(position.getRow(), position.getColumn() - 1);
