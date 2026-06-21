@@ -1,4 +1,4 @@
-package Board;
+package BoardLayer;
 
 public class Board {
     private int rows;

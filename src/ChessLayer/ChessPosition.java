@@ -1,6 +1,6 @@
-package Chess;
+package ChessLayer;
 
-import Board.Position;
+import BoardLayer.Position;
 
 public class ChessPosition {
     private char column;

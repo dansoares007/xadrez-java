@@ -1,8 +1,8 @@
-package Chess;
+package ChessLayer;
 
-import Board.Board;
-import Board.Piece;
-import Board.Position;
+import BoardLayer.Board;
+import BoardLayer.Piece;
+import BoardLayer.Position;
 
 public abstract class ChessPiece extends Piece {
 

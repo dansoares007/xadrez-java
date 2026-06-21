@@ -2,10 +2,10 @@ package Application;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Chess.ChessMatch;
-import Chess.ChessPiece;
-import Chess.ChessPosition;
-import Chess.Color;
+import ChessLayer.ChessMatch;
+import ChessLayer.ChessPiece;
+import ChessLayer.ChessPosition;
+import ChessLayer.Color;
 
 public class UI {
 

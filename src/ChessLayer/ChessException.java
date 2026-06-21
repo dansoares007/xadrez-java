@@ -1,6 +1,6 @@
-package Chess;
+package ChessLayer;
 
-import Board.BoardException;
+import BoardLayer.BoardException;
 
 public class ChessException extends BoardException {
 

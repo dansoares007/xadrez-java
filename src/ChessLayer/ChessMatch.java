@@ -1,14 +1,14 @@
-package Chess;
+package ChessLayer;
 
-import Board.Board;
-import Board.Piece;
-import Board.Position;
-import Chess.pieces.Bishop;
-import Chess.pieces.King;
-import Chess.pieces.Knight;
-import Chess.pieces.Pawn;
-import Chess.pieces.Queen;
-import Chess.pieces.Rook;
+import BoardLayer.Board;
+import BoardLayer.Piece;
+import BoardLayer.Position;
+import ChessLayer.pieces.Bishop;
+import ChessLayer.pieces.King;
+import ChessLayer.pieces.Knight;
+import ChessLayer.pieces.Pawn;
+import ChessLayer.pieces.Queen;
+import ChessLayer.pieces.Rook;
 
 public class ChessMatch {
 

@@ -2,10 +2,10 @@ package Application;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Chess.ChessMatch;
-import Chess.ChessPiece;
-import Chess.ChessPosition;
-import Chess.ChessException;
+import ChessLayer.ChessMatch;
+import ChessLayer.ChessPiece;
+import ChessLayer.ChessPosition;
+import ChessLayer.ChessException;
 
 public class Program {
     public static void main(String[] args) {

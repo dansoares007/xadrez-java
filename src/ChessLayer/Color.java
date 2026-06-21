@@ -1,4 +1,4 @@
-package Chess;
+package ChessLayer;
 
 public enum Color {
     BLACK,

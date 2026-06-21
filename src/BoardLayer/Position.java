@@ -1,4 +1,4 @@
-package Board;
+package BoardLayer;
 
 public class Position {
     private int column;
