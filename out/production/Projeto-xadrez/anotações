@@ -3,7 +3,7 @@ src/
     ├── Program.java
     └── UI.java
 └── boardgame/
-    ├── Board.java
+    ├── BoardLayer.java
     ├── BoardException.java
     ├── Piece.java
     └── Position.java
